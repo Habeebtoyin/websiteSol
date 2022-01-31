@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>USSD Operation</h1>
+</body>
+</html>
+<script>
+    // Creating a starting ussd entry 
+    var ussd = prompt("Enter USSD code");
+    //Checking if the ussd is correct
+    if(ussd === '*123#') {
+        // Selecting transaction to perform
+        let entry = prompt(
+            `\n1. Enter 1 to buy Airtime 
+            \n2. Enter 2 to buy Data
+            \n3. Enter 3 to Pay Bills`
+        );
+        // Accessing the Buy Airtime transaction
+        if (entry == 1) {
+            // Entering the amount for airtime transaction
+            let amt = prompt("Enter Amount");
+            //Checking the entry of amount entered
+            if (amt.length > 0) {
+                let pNum = prompt("Enter Phone Number");
+                if(pNum.length === 11) {
+                    alert(`${pNum} has been credited with ${amt}`);
+                } else {
+                    alert("Incorrect Phone Number");
+                }
+            } else {
+                alert("Unknown Airtime Value");
+            }
+        // Accessing the Buy Data transaction
+        } else if (entry == 2) {
+            // Entering the amount for airtime transaction
+            let amt = prompt("Enter Amount");
+            //Checking the entry of amount entered
+            if (amt.length > 0) {
+                let pNum = prompt("Enter Phone Number");
+                if(pNum.length === 11) {
+                    alert(`${pNum} has been credited with ${amt}`);
+                } else {
+                    alert("Incorrect Phone Number");
+                }
+            } else {
+                alert("Unknown Airtime Value");
+            }
+        // Accessing the Pay Bill transaction
+        } else if (entry == 3) {
+
+
+        } else {
+            alert("You entered the wrong value");
+        }
+    } else {
+        alert("You entered the wrong code");
+    }
+</script>
